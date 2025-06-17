@@ -8,10 +8,10 @@ internal class UnixConverter: JsonConverter<DateTime> {
         if (!reader.TryGetInt64(out long unixTime)) {
             return default;
         }
-        return DateTime.UnixEpoch.AddMilliseconds(unixTime);
+        return DateTime.UnixEpoch.AddSeconds(unixTime);
     }
 
     public override void Write(Utf8JsonWriter writer, DateTime value, JsonSerializerOptions options) {
-        writer.WriteNumberValue((long)(value - DateTime.UnixEpoch).TotalMilliseconds);
+        writer.WriteNumberValue((long)(value - DateTime.UnixEpoch).TotalSeconds);
     }
 }
