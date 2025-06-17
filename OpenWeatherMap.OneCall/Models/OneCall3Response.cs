@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using OpenWeatherMap.OneCall.Converter;
 
 namespace OpenWeatherMap.OneCall.Models;
 
@@ -8,7 +9,7 @@ public record OneCall3Response(
         [property: JsonPropertyName("lat")] double Lat,
         [property: JsonPropertyName("lon")] double Lon,
         [property: JsonPropertyName("timezone")] string Timezone,
-        [property: JsonPropertyName("timezone_offset")] int TimezoneOffset,
+        [property: JsonPropertyName("timezone_offset"), JsonConverter(typeof(SecondsToTimeSpanConverter))] TimeSpan TimezoneOffset,
         [property: JsonPropertyName("current")] Current Current,
         [property: JsonPropertyName("minutely")] IReadOnlyList<Minutely> Minutely,
         [property: JsonPropertyName("hourly")] IReadOnlyList<Hourly> Hourly,

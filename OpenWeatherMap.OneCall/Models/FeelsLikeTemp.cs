@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace OpenWeatherMap.OneCall.Models;
 
-public record FeelsLike(
+public record FeelsLikeTemp(
     [property: JsonPropertyName("day")] double Day,
     [property: JsonPropertyName("night")] double Night,
     [property: JsonPropertyName("eve")] double Eve,

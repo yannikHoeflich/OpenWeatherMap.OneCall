@@ -12,6 +12,6 @@ internal class UnixConverter: JsonConverter<DateTime> {
     }
 
     public override void Write(Utf8JsonWriter writer, DateTime value, JsonSerializerOptions options) {
-        writer.WriteNumberValue((int)(value - DateTime.UnixEpoch).TotalMilliseconds);
+        writer.WriteNumberValue((long)(value - DateTime.UnixEpoch).TotalMilliseconds);
     }
 }
