@@ -1,9 +1,10 @@
 using System.Text.Json.Serialization;
+using OpenWeatherMap.OneCall.Converter;
 
 namespace OpenWeatherMap.OneCall.Models;
 
 public record Hourly(
-    [property: JsonPropertyName("dt")] int Dt,
+    [property: JsonPropertyName("dt"), JsonConverter(typeof(UnixConverter))] DateTime DateTime,
     [property: JsonPropertyName("temp")] double Temp,
     [property: JsonPropertyName("feels_like")] double FeelsLike,
     [property: JsonPropertyName("pressure")] int Pressure,

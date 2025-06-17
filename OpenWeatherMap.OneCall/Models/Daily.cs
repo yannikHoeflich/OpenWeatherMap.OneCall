@@ -1,13 +1,14 @@
 using System.Text.Json.Serialization;
+using OpenWeatherMap.OneCall.Converter;
 
 namespace OpenWeatherMap.OneCall.Models;
 
 public record Daily(
-    [property: JsonPropertyName("dt")] int Dt,
-    [property: JsonPropertyName("sunrise")] int Sunrise,
-    [property: JsonPropertyName("sunset")] int Sunset,
-    [property: JsonPropertyName("moonrise")] int Moonrise,
-    [property: JsonPropertyName("moonset")] int Moonset,
+    [property: JsonPropertyName("dt"), JsonConverter(typeof(UnixConverter))] DateTime DateTime,
+    [property: JsonPropertyName("sunrise"), JsonConverter(typeof(UnixConverter))] DateTime Sunrise,
+    [property: JsonPropertyName("sunset"), JsonConverter(typeof(UnixConverter))] DateTime Sunset,
+    [property: JsonPropertyName("moonrise"), JsonConverter(typeof(UnixConverter))] DateTime Moonrise,
+    [property: JsonPropertyName("moonset"), JsonConverter(typeof(UnixConverter))] DateTime Moonset,
     [property: JsonPropertyName("moon_phase")] double MoonPhase,
     [property: JsonPropertyName("summary")] string Summary,
     [property: JsonPropertyName("temp")] Temp Temp,
