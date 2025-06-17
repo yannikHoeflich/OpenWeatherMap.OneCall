@@ -14,7 +14,7 @@ public record Hourly(
     [property: JsonPropertyName("clouds")] int Clouds,
     [property: JsonPropertyName("visibility")] int Visibility,
     [property: JsonPropertyName("wind_speed")] double WindSpeed,
-    [property: JsonPropertyName("wind_deg")] int WindDeg,
+    [property: JsonPropertyName("wind_deg")] int WindDegree,
     [property: JsonPropertyName("wind_gust")] double WindGust,
     [property: JsonPropertyName("weather")] IReadOnlyList<Weather> Weather,
     [property: JsonPropertyName("pop")] double Pop

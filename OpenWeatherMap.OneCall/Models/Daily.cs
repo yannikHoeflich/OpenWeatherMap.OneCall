@@ -30,7 +30,7 @@ public record Daily(
     [property: JsonPropertyName("wind_speed")]
     double WindSpeed,
     [property: JsonPropertyName("wind_deg")]
-    int WindDeg,
+    int WindDegree,
     [property: JsonPropertyName("wind_gust")]
     double WindGust,
     [property: JsonPropertyName("weather")]
