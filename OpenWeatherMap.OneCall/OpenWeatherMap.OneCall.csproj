@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <WarningsAsErrors>Nullable</WarningsAsErrors>
-        <Version>1.0.1</Version>
+        <Version>1.0.2</Version>
         <PackageLicenseUrl>https://raw.githubusercontent.com/yannikHoeflich/OpenWeatherMap.OneCall/refs/heads/master/LICENSE</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/yannikHoeflich/OpenWeatherMap.OneCall</RepositoryUrl>
     </PropertyGroup>
