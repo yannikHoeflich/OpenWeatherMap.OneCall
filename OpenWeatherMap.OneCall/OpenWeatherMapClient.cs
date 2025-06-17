@@ -55,7 +55,7 @@ public class OpenWeatherMapClient {
     private static string ExcludesToString(Excludes excludes) {
         StringBuilder sb = new StringBuilder();
         if (excludes.HasFlag(Excludes.Minutely)) {
-            sb.Append("sb,");
+            sb.Append("minutely,");
         } 
         if (excludes.HasFlag(Excludes.Hourly)) {
             sb.Append("hourly,");
